@@ -1,0 +1,13 @@
+\frametitle{Self-defined Environments}
+
+\begin{idea}[My own idea]
+ Here is a self-defined environment
+\end{idea}
+
+\begin{defi}
+ Test
+\end{defi}
+
+\begin{ex}
+ Test
+\end{ex}

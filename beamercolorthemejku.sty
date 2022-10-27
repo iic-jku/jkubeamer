@@ -1,0 +1,157 @@
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	COLOR PALETTE
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\ProvidesPackage{beamercolorthemejku}
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	OPTIONS
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\newif\if@greyText
+\@greyTextfalse
+\DeclareOptionBeamer{greyText}{\@greyTexttrue}
+
+\newif\if@maccolors
+\@maccolorsfalse
+\DeclareOptionBeamer{mac}{\@maccolorstrue}
+
+\DeclareOptionBeamer*{%
+  \PackageWarning{beamercolorthemejku}{Unknown option `\CurrentOption'}%
+}
+
+\ProcessOptionsBeamer
+
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	JKU COLOR THEME
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+\if@maccolors
+%== BLUE
+	\definecolor{jkuBlue}{RGB}{0,120,170}
+%== CYAN
+	\definecolor{jkuCyan}{RGB}{100,180,190}
+%== YELLOW
+	\definecolor{jkuYellow}{RGB}{230,195,35}
+%== GREY
+	\definecolor{jkuGrey}{RGB}{125,130,140}
+%== DARKGREY
+	\definecolor{jkuDarkGrey}{RGB}{51,51,51}
+%== LIGHTGREEN
+	\definecolor{jkuLightGreen}{RGB}{195,215,75}
+%== GREEN
+	\definecolor{jkuGreen}{RGB}{115,180,85}
+%== PURPLE
+	\definecolor{jkuPurple}{RGB}{145,75,130}
+%== RED
+	\definecolor{jkuRed}{RGB}{205,90,80}
+
+\else
+%== BLUE
+	\definecolor{jkuBlue}{RGB}{4,110,152}
+%== CYAN
+	\definecolor{jkuCyan}{RGB}{92,207,203}
+%== YELLOW
+	\definecolor{jkuYellow}{RGB}{251,186,0}
+%== GREY
+	\definecolor{jkuGrey}{RGB}{128,130,136}
+%== DARKGREY
+	\definecolor{jkuDarkGrey}{RGB}{90,90,90}
+%== LIGHTGREEN
+	\definecolor{jkuLightGreen}{RGB}{187,208,50}
+%== GREEN
+	\definecolor{jkuGreen}{RGB}{76,172,78}
+%== PURPLE
+	\definecolor{jkuPurple}{RGB}{156,71,123}
+%== RED
+	\definecolor{jkuRed}{RGB}{231,55,41}
+\fi
+
+	\newcommand{\cjkuBlue}[1]{{\color{jkuBlue}{#1}}}
+	\newcommand{\cBlue}[1]{{\color{jkuBlue}{#1}}}
+	\newcommand{\crBlue}{\color{jkuBlue}}
+
+	\newcommand{\cjkuCyan}[1]{{\color{jkuCyan}{#1}}}
+	\newcommand{\cCyan}[1]{{\color{jkuCyan}{#1}}}
+	\newcommand{\crCyan}{\color{jkuCyan}}
+
+	\newcommand{\cjkuYellow}[1]{{\color{jkuYellow}{#1}}}
+	\newcommand{\cYellow}[1]{{\color{jkuYellow}{#1}}}
+	\newcommand{\crYellow}{\color{jkuYellow}}
+
+	\newcommand{\cjkuGrey}[1]{{\color{jkuGrey}{#1}}}
+	\newcommand{\cGrey}[1]{{\color{jkuGrey}{#1}}}
+	\newcommand{\crGrey}{\color{jkuGrey}}
+
+	\newcommand{\cjkuDarkGrey}[1]{{\color{jkuDarkGrey}{#1}}}
+	\newcommand{\cDarkGrey}[1]{{\color{jkuDarkGrey}{#1}}}
+	\newcommand{\crDarkGrey}{\color{jkuDarkGrey}}
+
+	\newcommand{\cjkuLightGreen}[1]{{\color{jkuLightGreen}{#1}}}
+	\newcommand{\cLightGreen}[1]{{\color{jkuLightGreen}{#1}}}
+	\newcommand{\crLightGreen}{\color{jkuLightGreen}}
+
+	\newcommand{\cjkuGreen}[1]{{\color{jkuGreen}{#1}}}
+	\newcommand{\cGreen}[1]{{\color{jkuGreen}{#1}}}
+	\newcommand{\crGreen}{\color{jkuGreen}}
+
+	\newcommand{\cjkuPurple}[1]{{\color{jkuPurple}{#1}}}
+	\newcommand{\cPurple}[1]{{\color{jkuPurple}{#1}}}
+	\newcommand{\crPurple}{\color{jkuPurple}}
+
+	\newcommand{\cjkuRed}[1]{{\color{jkuRed}{#1}}}
+	\newcommand{\cRed}[1]{{\color{jkuRed}{#1}}}
+	\newcommand{\crRed}{\color{jkuRed}}
+
+% Palettes
+\setbeamercolor{palette primary}{fg=jkuGrey, bg=white}
+\setbeamercolor{palette secondary}{fg=black,bg=white}
+\setbeamercolor{palette tertiary}{fg=jkuGrey, bg=white}
+\setbeamercolor{palette quaternary}{fg=black, bg=white}
+
+% General
+\if@greyText
+\setbeamercolor{normal text}{fg=jkuDarkGrey}
+\else
+\setbeamercolor{normal text}{fg=black}
+\setbeamercolor{subsection number projected}{bg=black}
+\setbeamercolor{bibliography entry author}{fg=black}
+\setbeamercolor{bibliography entry title}{fg=black}
+\setbeamercolor{bibliography item}{fg=black}
+\fi
+\setbeamercolor{structure}{fg=jkuDarkGrey}
+\setbeamercolor{alerted text}{fg=jkuPurple}
+\setbeamercolor{section in toc}{parent=normal text}
+
+% Titlepage
+\setbeamercolor{title}{parent=palette secondary}
+\setbeamercolor{subtitle}{parent=palette secondary}
+\setbeamercolor{institute}{parent=normal text}
+
+% Content
+\setbeamercolor{frametitle}{parent=palette secondary}
+
+% Blocks
+\setbeamercolor{block title}{fg=white,bg=jkuDarkGrey}
+\setbeamercolor{block body}{parent=normal text, bg=jkuGrey!20}
+\setbeamercolor{block title example}{fg=white, bg=jkuDarkGrey}
+\setbeamercolor{block body example}{parent=normal text, bg=jkuGrey!20}
+\setbeamercolor{block title alerted}{fg=white, bg=jkuPurple}
+\setbeamercolor{block body alerted}{fg=black, bg=jkuPurple!15}
+
+% Page Number
+\setbeamercolor{section in head/foot}{fg=jkuDarkGrey}
+\setbeamercolor{page number in head/foot}{parent=section in head/foot}
+\setbeamercolor{itemize item}{parent=palette secondary}
+\setbeamercolor{itemize subitem}{parent=itemize item}
+\setbeamercolor{itemize subsubitem}{parent=itemize item}
+\setbeamercolor{enumerate item}{parent=palette secondary}
+\setbeamercolor{enumerate subitem}{parent=enumerate item}
+\setbeamercolor{enumerate subsubitem}{parent=enumerate item}
+\setbeamercolor{description item}{parent=palette secondary}
+
+\setbeamercolor{progressbar}{parent=palette quaternary}
+\setbeamercolor{sectionpage sectiontitle}{parent=palette secondary}
+\setbeamercolor{sectionpage subsectiontitle}{parent=palette secondary}
+\setbeamercolor{sectionpage subsubsectiontitle}{parent=palette tertiary}
+
+\mode<all>

@@ -1,0 +1,17 @@
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+%	COLOR PALETTE
+%-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+
+\ProvidesPackage{beamercolorthemejkusowi}
+
+\DeclareOptionBeamer*{%
+  \PackageWarning{beamercolorthemejkusowi}{Unknown option `\CurrentOption'}%
+}
+
+\ProcessOptionsBeamer
+
+% Palettes
+\setbeamercolor{palette primary}{fg=jkuGreen, bg=white}
+\setbeamercolor{palette quaternary}{fg=jkuPurple, bg=jkuDarkGrey}
+
+\mode<all>
